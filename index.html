@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <link href="css/all.min.css" rel="stylesheet" />
     <link
       rel="icon"
       type="image/png"
@@ -22,7 +22,9 @@
         <ul class="nav__list">
           <li class="nav__item"><a href="#" class="nav__link">Features</a></li>
           <li class="nav__item"><a href="#" class="nav__link">Team</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Sign In</a></li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Sign&nbspIn</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -43,10 +45,12 @@
             class="input__email"
             type="email"
             name="email"
-            id="email"
+            id="email-1"
             placeholder="Enter your email..."
           />
-          <button class="btn--get-started">Get Started</button>
+          <button type="button" class="btn--get-started btn-1">
+            Get Started
+          </button>
         </form>
       </div>
       <div class="col col-right">
@@ -66,15 +70,19 @@
         </p>
         <a class="btn--link">See how Fylo works </a>
         <div class="section__testimonial">
-          <p class="testimony">
+          <blockquote class="testimony">
             Fylo has improved our team productivity by an order of magnitude.
             Since making the switch our team has become a well-oiled
             collaboration machine.
-          </p>
+          </blockquote>
           <div class="profile">
-            <img src="images/avatar-testimonial.jpg" alt="" />
-            <h4 class="profile__name">Kyle Burton</h4>
-            <span class="profile__position">Founder & CEO, Huddle</span>
+            <img
+              class="profile__picture item1"
+              src="images/avatar-testimonial.jpg"
+              alt=""
+            />
+            <h4 class="profile__name item2">Kyle Burton</h4>
+            <span class="profile__position item3">Founder & CEO, Huddle</span>
           </div>
         </div>
       </div>
@@ -82,11 +90,52 @@
         <img class="hero--img" src="images/illustration-2.svg" alt="" />
       </div>
     </section>
-    Get early access today It only takes a minute to sign up and our free
-    starter tier is extremely generous. If you have any questions, our support
-    team would be happy to help you. Get Started For Free Phone: +1-543-123-4567
-    example@fylo.com About Us Jobs Press Blog Contact Us Terms Privacy
-    <footer>
+    <section class="section section--2">
+      <div class="col col-left">
+        <h2 class="section__title">Get early access today</h2>
+        <p class="section__paragraph">
+          It only takes a minute to sign up and our free starter tier is
+          extremely generous. If you have any questions, our support team would
+          be happy to help you.
+        </p>
+      </div>
+      <div class="col col-right">
+        <input
+          class="input__email input_email-2"
+          type="email"
+          name="email"
+          id="email-2"
+          placeholder="email@example.com"
+        />
+        <button class="btn--get-started btn-2">Get Started For Free</button>
+      </div>
+    </section>
+    <footer class="footer" id="footer">
+      <section class="section section--3">
+        <div class="grid-1">
+          <img class="footer__logo" src="images/logo.svg" alt="logo" />
+        </div>
+        <div class="footer__col footer__contact-details grid-2">
+          <p class="phone">Phone: +1-543-123-4567</p>
+          <p class="email">example@fylo.com</p>
+        </div>
+        <div class="footer__col footer__about-us grid-3">
+          <a href="#" class="about-us"> About Us</a>
+          <a href="#" class="jobs"> Jobs</a>
+          <a href="#" class="press"> Press </a>
+          <a href="#" class="blog"> Blog </a>
+        </div>
+        <div class="footer__col footer__contact-us grid-4">
+          <a href="#" class="contact-us"> Contact Us </a>
+          <a href="#" class="terms"> Terms </a>
+          <a href="#" class="privacy">Privacy</a>
+        </div>
+        <div class="footer__col social-media grid-5">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </section>
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -95,5 +144,6 @@
         <a href="https://github.com/Briancarlo24">Brian Carlo Birondo</a>.
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
