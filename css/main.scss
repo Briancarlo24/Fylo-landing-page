@@ -27,8 +27,8 @@ $moderate-cyan: hsl(170, 45%, 43%);
 $lg-blue: hsl(240, 75%, 98%);
 $light-gray: hsl(0, 0%, 75%);
 //Hover
-$bright-blue-hover: hsla(222, 6%, 41%, 0.5);
-$moderate-cyan-hover: hsla(170, 45%, 43%, 0.5);
+$bright-blue-hover: hsl(224, 96%, 71%);
+$moderate-cyan-hover: hsl(170, 42%, 63%);
 /*******Fonts*******/
 $header-1-lg: calc(1rem + 0.75vw);
 $header-1-md: calc(1.5rem + 1.3vw);
@@ -115,8 +115,7 @@ $media-lg: 1200px;
 }
 .nav__link {
   text-decoration: none;
-  // margin: clamp(0.5rem, 3vw, 1.5rem); //1.5rem
-  margin: calc(0.5rem + 1vw); //1.5rem
+  margin: 0 clamp(0.1rem, 1.5vw, 2rem); //1.5rem
   font-size: $parag-lg;
   color: $desat-blue;
 }
@@ -137,6 +136,7 @@ $media-lg: 1200px;
 .form {
   width: 100%;
   display: flex;
+  position: relative;
 }
 .input__email {
   margin-right: 1rem;
@@ -149,7 +149,20 @@ $media-lg: 1200px;
     border-radius: 3px;
   }
 }
-
+.pop-up-1 {
+  color: rgb(230, 173, 181);
+  font-size: 0.8em;
+  position: absolute;
+  top: 2.8rem;
+  display: none;
+}
+.pop-up-2 {
+  color: rgb(230, 173, 181);
+  font-size: 0.8em;
+  margin: 5px 10% 0;
+  width: 80%;
+  display: none;
+}
 .btn--get-started {
   width: 15rem;
 }
@@ -280,6 +293,13 @@ $media-lg: 1200px;
     margin: 0.5rem 1rem;
     max-width: 100%;
   }
+  .pop-up {
+    color: rgb(230, 173, 181);
+    font-size: 0.8em;
+    margin-left: 1rem;
+    position: relative;
+    top: 0;
+  }
   .btn--get-started {
     margin: 0.5rem 1rem;
     width: 100%;
@@ -332,6 +352,11 @@ $media-lg: 1200px;
     margin: 0.5rem 0;
     width: 100%;
   }
+  .pop-up {
+    margin-left: 0;
+    position: relative;
+    top: 0;
+  }
   .btn--get-started {
     margin: 0.5rem 0;
     width: 100%;
@@ -352,6 +377,9 @@ $media-lg: 1200px;
   padding-bottom: 5px;
   &::after {
     content: url(../images/icon-arrow.svg);
+  }
+  &:active {
+    color: $moderate-cyan-hover;
   }
 }
 .section__testimonial {
@@ -484,17 +512,18 @@ $media-lg: 1200px;
   }
   .input__email {
     max-width: 80%;
-    margin-bottom: 0.75rem;
     margin-right: 10%;
     margin-left: 10%;
   }
-  .input__email {
+  .input_email-2 {
     box-shadow: 4px 4px 12px -8px rgba(0, 0, 0, 0.5);
+    border: transparent;
   }
   .btn--get-started {
     max-width: 10.5rem;
     margin-right: 10%;
     margin-left: 10%;
+    margin-top: 0.75rem;
   }
 }
 // Medium Screen -- 992px
@@ -505,7 +534,6 @@ $media-lg: 1200px;
     }
     .input__email {
       max-width: 60%;
-      margin-bottom: 0.65rem;
       margin-right: auto;
       margin-left: auto;
     }
@@ -513,6 +541,7 @@ $media-lg: 1200px;
       min-width: 60%;
       margin-right: auto;
       margin-left: auto;
+      margin-top: 0.65rem;
     }
   }
 }
@@ -561,8 +590,8 @@ $media-lg: 1200px;
   background-color: $vd-blue;
   color: white;
   width: 100%;
-  padding-right: $margin-section-xm;
-  padding-left: $margin-section-xm;
+  padding-right: $margin-section-md;
+  padding-left: $margin-section-md;
   .phone {
     margin-bottom: 1rem;
     &::before {
@@ -798,16 +827,20 @@ button {
   color: white;
   cursor: pointer;
   box-shadow: 2px 2px 10px -4px black;
+  &:active {
+    background-color: $bright-blue-hover;
+  }
 }
 input {
   padding: 0 1rem;
+  border: 1px solid $light-gray;
+
   &::placeholder {
     opacity: 0.5;
     color: $light-gray;
-
-    &:focus::placeholder {
-      color: transparent;
-    }
+  }
+  &:focus::placeholder {
+    color: transparent;
   }
 }
 h1,
@@ -818,4 +851,11 @@ h2 {
 p {
   color: $vd-blue;
   margin-right: 2rem;
+}
+
+.display {
+  display: block;
+}
+.error-border {
+  border: 2px solid rgb(230, 173, 181);
 }

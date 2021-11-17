@@ -85,7 +85,7 @@ html {
 
 .nav__link {
   text-decoration: none;
-  margin: calc(0.5rem + 1vw);
+  margin: 0 clamp(0.1rem, 1.5vw, 2rem);
   font-size: 0.9rem;
   color: #585989;
 }
@@ -110,6 +110,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .input__email {
@@ -122,6 +123,22 @@ html {
   outline: 2px solid #e6adb5;
   border: transparent;
   border-radius: 3px;
+}
+
+.pop-up-1 {
+  color: #e6adb5;
+  font-size: 0.8em;
+  position: absolute;
+  top: 2.8rem;
+  display: none;
+}
+
+.pop-up-2 {
+  color: #e6adb5;
+  font-size: 0.8em;
+  margin: 5px 10% 0;
+  width: 80%;
+  display: none;
 }
 
 .btn--get-started {
@@ -259,6 +276,13 @@ html {
     margin: 0.5rem 1rem;
     max-width: 100%;
   }
+  .pop-up {
+    color: #e6adb5;
+    font-size: 0.8em;
+    margin-left: 1rem;
+    position: relative;
+    top: 0;
+  }
   .btn--get-started {
     margin: 0.5rem 1rem;
     width: 100%;
@@ -310,6 +334,11 @@ html {
     margin: 0.5rem 0;
     width: 100%;
   }
+  .pop-up {
+    margin-left: 0;
+    position: relative;
+    top: 0;
+  }
   .btn--get-started {
     margin: 0.5rem 0;
     width: 100%;
@@ -332,6 +361,10 @@ html {
 
 .btn--link::after {
   content: url(../images/icon-arrow.svg);
+}
+
+.btn--link:active {
+  color: #79c8bb;
 }
 
 .section__testimonial {
@@ -491,20 +524,21 @@ html {
 
 .section--2 .input__email {
   max-width: 80%;
-  margin-bottom: 0.75rem;
   margin-right: 10%;
   margin-left: 10%;
 }
 
-.section--2 .input__email {
+.section--2 .input_email-2 {
   -webkit-box-shadow: 4px 4px 12px -8px rgba(0, 0, 0, 0.5);
           box-shadow: 4px 4px 12px -8px rgba(0, 0, 0, 0.5);
+  border: transparent;
 }
 
 .section--2 .btn--get-started {
   max-width: 10.5rem;
   margin-right: 10%;
   margin-left: 10%;
+  margin-top: 0.75rem;
 }
 
 @media screen and (max-width: 992px) {
@@ -513,7 +547,6 @@ html {
   }
   .section--2 .input__email {
     max-width: 60%;
-    margin-bottom: 0.65rem;
     margin-right: auto;
     margin-left: auto;
   }
@@ -521,6 +554,7 @@ html {
     min-width: 60%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 0.65rem;
   }
 }
 
@@ -563,8 +597,8 @@ html {
   background-color: #070439;
   color: white;
   width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
 }
 
 .footer .phone {
@@ -843,8 +877,13 @@ button {
           box-shadow: 2px 2px 10px -4px black;
 }
 
+button:active {
+  background-color: #6e94fc;
+}
+
 input {
   padding: 0 1rem;
+  border: 1px solid #bfbfbf;
 }
 
 input::-webkit-input-placeholder {
@@ -867,19 +906,19 @@ input::placeholder {
   color: #bfbfbf;
 }
 
-input::-webkit-input-placeholder:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-input:-ms-input-placeholder:focus:-ms-input-placeholder {
+input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-input::-ms-input-placeholder:focus::-ms-input-placeholder {
+input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-input::placeholder:focus::placeholder {
+input:focus::placeholder {
   color: transparent;
 }
 
@@ -892,5 +931,13 @@ h2 {
 p {
   color: #070439;
   margin-right: 2rem;
+}
+
+.display {
+  display: block;
+}
+
+.error-border {
+  border: 2px solid #e6adb5;
 }
 /*# sourceMappingURL=main.css.map */
