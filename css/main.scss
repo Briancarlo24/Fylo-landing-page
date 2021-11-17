@@ -638,10 +638,14 @@ $media-lg: 1200px;
   justify-content: center;
   align-content: flex-start;
 }
+.fa-stack {
+  margin: 2rem clamp(0.1rem, 0.75vw, 1rem) 0;
+}
 .fab {
-  border-radius: 50%;
   cursor: pointer;
-  margin: 0 20px 20px;
+  &:active {
+    color: $bright-blue;
+  }
 }
 // footer flext layout
 .grid-1 {
@@ -703,14 +707,11 @@ $media-lg: 1200px;
 
   .section--3 {
     padding: 5.5rem 0;
-
     text-align: left;
     display: flex;
   }
   .fab {
-    border-radius: 50%;
     cursor: pointer;
-    margin: 0 15px 20px;
   }
   .footer__logo {
     width: 10rem;
@@ -776,10 +777,12 @@ $media-lg: 1200px;
     display: flex;
     justify-content: center;
   }
+  .fa-stack {
+    margin: 1rem clamp(0.1rem, 0.75vw, 1rem) 0;
+  }
   .fab {
     border-radius: 50%;
     cursor: pointer;
-    margin: 25px 12px 0;
   }
 
   .attribution {
@@ -806,7 +809,6 @@ $media-lg: 1200px;
   .fab {
     border-radius: 50%;
     cursor: pointer;
-    margin: 20px 12px 0;
   }
 }
 // -------------- GLOBAL STYLES --------------
